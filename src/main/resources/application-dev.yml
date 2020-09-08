@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  mvc.favicon.enabled: false
+  datasource:
+    jdbcUrl: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1
+
+  h2:
+    console:
+      enabled: true
+jwt:
+  clientId: oauth-sample
+  client-secret: secret
+  accessTokenValidititySeconds: 120
+  refreshTokenValiditySeconds: 1000
+  accessTokenCookieName: accessToken
+  refreshTokenCookieName: refreshToken
+
+logging:
+  config:
+    classpath: log4j2.yml
+  level:
+    org:
+      hibernate:
+        SQL : INFO
